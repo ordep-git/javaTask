@@ -72,7 +72,7 @@ public class TaskManager {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-                System.out.println("Błąd pliku");
+                System.out.println("Błąd pliku.");
             }
         }
         return tab;
