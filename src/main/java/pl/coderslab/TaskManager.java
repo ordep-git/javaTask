@@ -1,7 +1,6 @@
 package pl.coderslab;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.io.IOException;
@@ -96,23 +95,23 @@ public class TaskManager {
         String dueDate = scanner.nextLine();
         System.out.println("Is your task important: true/false");
         String isImportant = scanner.nextLine();
-        tasks =  Arrays.copyOf(tasks, tasks.length + 1);
+        tasks = Arrays.copyOf(tasks, tasks.length + 1);
 
-        tasks[tasks.length-1] = new String[3];
-        tasks[tasks.length-1][0] = description;
-        tasks[tasks.length-1][1] = dueDate;
-        tasks[tasks.length-1][2] = isImportant;
+        tasks[tasks.length - 1] = new String[3];
+        tasks[tasks.length - 1][0] = description;
+        tasks[tasks.length - 1][1] = dueDate;
+        tasks[tasks.length - 1][2] = isImportant;
     }
 
-        private static void removeTask(String[][] tab, int index) {
-            try {
-                if (index < tab.length) {
-                    tasks = ArrayUtils.remove(tab, index);
-                }
-            } catch (ArrayIndexOutOfBoundsException ex) {
-                System.out.println("Element not exist in tab");
+    private static void removeTask(String[][] tab, int index) {
+        try {
+            if (index < tab.length) {
+                tasks = ArrayUtils.remove(tab, index);
             }
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println("Element not exist in tab");
         }
+    }
 
 
     public static boolean isNumberGreaterEqualZero(String input) {
@@ -128,7 +127,7 @@ public class TaskManager {
         String n = scanner.nextLine();
         while (!isNumberGreaterEqualZero(n)) {
             System.out.println("Incorrect argument passed. Please give number greater or equal 0");
-            scanner.nextLine();
+            n = scanner.nextLine();
         }
         return Integer.parseInt(n);
     }
